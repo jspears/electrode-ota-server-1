@@ -16,9 +16,7 @@
     "test": "yarn run lerna && mocha --compilers js:./electrode-ota-server-util-dev/babelhook ./electrode-ota-server*/test/*-test.js",
     "coverage": "./node_modules/.bin/nyc --sourceMap=false --reportDir=./coverage --instrument=false --all --include=./electrode-ota-server*/src/**/*.js mocha --compilers js:./electrode-ota-server-util-dev/babelhook-coverage  ./electrode-ota-server*/test/*-test.js  && nyc report --reporter=html"
   },
-  "bin": {
-    "electrode-ota-server": "./index.js"
-  },
+
   "engines": {
     "node": "~6.6.0"
   },
@@ -30,9 +28,9 @@
     "cordova"
   ],
   "dependencies": {
-    "lerna": "^2.0.0-rc.2",
-    "lerna-relinker": "^1.2.2"
-   },
+    "lerna": "^2.0.0-rc.4",
+    "lerna-relinker": "^1.4.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",

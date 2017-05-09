@@ -2,6 +2,10 @@
   "name": "electrode-ota-server",
   "version": "2.0.0-beta",
   "main": "index.js",
+  "bin": {
+    "electrode-ota-server": "./index.js",
+    "electrode-ota": "./index.js"
+  },
   "scripts": {
     "test": "ota-mocha",
     "build": "ota-babel",

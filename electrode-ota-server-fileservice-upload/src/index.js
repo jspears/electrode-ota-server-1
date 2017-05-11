@@ -8,8 +8,11 @@ import {shasum} from 'electrode-ota-server-util';
  * use a storage provider for this stuff.
  *
  */
-export const fileservice = ({downloadUrl}, dao) => {
+export const fileservice = (options, downloadUrl, dao) => {
     downloadUrl = downloadUrl && downloadUrl.replace(/\/+?$/, '');
+    if (!downloadUrl){
+        console.warn(`Please configure a downloadUrl pointing to your server in plugins.electrode-ota-server-fileserver.options.downloadUrl`);
+    }
     return (file) => {
         const packageHash = shasum(file);
         return dao.upload(packageHash, file).then(() => ({
@@ -27,6 +30,6 @@ export const register = diregister({
     name: "ota!fileservice-upload",
     multiple: false,
     connections: false,
-    dependencies: ['ota!dao']
+    dependencies: ['ota!fileservice', 'ota!dao']
 }, fileservice);
 

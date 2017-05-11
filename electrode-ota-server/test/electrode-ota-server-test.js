@@ -1,5 +1,3 @@
-"use strict";
-
 import path from "path";
 import {expect} from "chai";
 import {
@@ -13,7 +11,7 @@ import otaServer from '../src';
 process.env.NODE_ENV = 'test';
 process.env.PORT = 9999;
 process.env.OTA_CONFIG_DIR = path.join(__dirname, 'config');
-
+console.log(process.env.OTA_CONFIG_DIR);
 /**
  *  **** IMPORTANT ***
  *

@@ -9,11 +9,33 @@ ammo@2.x.x:
     boom "4.x.x"
     hoek "4.x.x"
 
+array-uniq@1.0.2:
+  version "1.0.2"
+  resolved "http://npme.walmart.com/array-uniq/-/array-uniq-1.0.2.tgz#5fcc373920775723cfd64d65c64bef53bf9eba6d"
+
 boom@4.x.x:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/boom/-/boom-4.3.1.tgz#4f8a3005cb4a7e3889f749030fd25b96e01d2e31"
   dependencies:
     hoek "4.x.x"
+
+electrode-ota-server-diregister@^2.0.0-beta-3:
+  version "2.0.0-beta-3"
+  resolved "http://npme.walmart.com/electrode-ota-server-diregister/-/electrode-ota-server-diregister-2.0.0-beta-3.tgz#d0a321461c79443f5cb7670bad1f76e45550e6f1"
+
+electrode-ota-server-service-fileservice@^2.0.0-beta-3:
+  version "2.0.0-beta-3"
+  resolved "http://npme.walmart.com/electrode-ota-server-service-fileservice/-/electrode-ota-server-service-fileservice-2.0.0-beta-3.tgz#838fab58f4612b05d82d4ed5b6631640a67b8db4"
+  dependencies:
+    electrode-ota-server-diregister "^2.0.0-beta-3"
+    electrode-ota-server-util "^2.0.0-beta-3"
+
+electrode-ota-server-util@^2.0.0-beta-3:
+  version "2.0.0-beta-3"
+  resolved "http://npme.walmart.com/electrode-ota-server-util/-/electrode-ota-server-util-2.0.0-beta-3.tgz#817d760d1f079e22751b5f0948a13e6f2ff42851"
+  dependencies:
+    electrode-ota-server-diregister "^2.0.0-beta-3"
+    randomstring "^1.1.5"
 
 hoek@4.x.x:
   version "4.1.1"
@@ -57,6 +79,12 @@ lru-cache@4.0.x:
 pseudomap@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
+
+randomstring@^1.1.5:
+  version "1.1.5"
+  resolved "http://npme.walmart.com/randomstring/-/randomstring-1.1.5.tgz#6df0628f75cbd5932930d9fe3ab4e956a18518c3"
+  dependencies:
+    array-uniq "1.0.2"
 
 topo@2.x.x:
   version "2.0.2"

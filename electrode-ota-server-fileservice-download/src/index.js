@@ -1,4 +1,5 @@
 import diregister from "electrode-ota-server-diregister";
+import assert from 'assert';
 /**
  * The fileservice is meant to be plugable.
  *

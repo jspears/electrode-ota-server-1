@@ -32,7 +32,7 @@ export const register = diregister({
                 {
                     updateCheck(request.query, (e, updateInfo) => {
                         if (e) {
-                            console.log('error making update check ', request.query, e.message);
+                            console.warn('error making update check ', request.query, e.message);
                             return reply(e);
                         }
                         reply({updateInfo});

@@ -61,12 +61,10 @@ export default function () {
                     "disableTTYConfirmation": !TTY.isatty()
                 }
             },
+            "electrode-ota-server-fileservice": {},
             "electrode-ota-server-dao-plugin": {},
             "electrode-ota-server-fileservice-upload": {},
             "electrode-ota-server-fileservice-download": {},
-            "electrode-ota-server-fileservice": {
-                "module": "electrode-ota-server-service-fileservice"
-            },
             "electrode-ota-server-model-manifest": {},
             "electrode-ota-server-model-weighted": {},
             "electrode-ota-server-model-app": {},

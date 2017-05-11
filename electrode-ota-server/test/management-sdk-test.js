@@ -369,7 +369,9 @@ describe('managment-sdk', function () {
                     clientUniqueId,
                     appVersion: '1.0.0',
                     deploymentKey: deployment.key
-                }).reportStatusDownload({label: 'v1'}, (e, o) => e ? reject(e) : resolve(o)))
+                }).reportStatusDownload({label: 'v1'}, (e, o) =>{
+                    e ? reject(e) : resolve(o)
+                }))
 
                     .then(_ => am.getDeploymentMetrics(name, 'Staging'))
                     .then(expected({
@@ -412,7 +414,10 @@ describe('managment-sdk', function () {
                     isDisabled: true,
                     isMandatory: true,
                     rollout: 50
-                }))
+                })).then(function(resp){
+
+                    return resp;
+                })
                 .then(expected()));
 
             it('should fail patching rollout lower value', () => {
@@ -480,7 +485,7 @@ describe('managment-sdk', function () {
                                             expect(shouldUpdate.appVersion, 'appVersion').to.eql('1.2.3');
                                             expect(shouldUpdate.deploymentKey, 'deploymentKey').to.eql(deployment.key);
                                             expect(shouldUpdate.isMandatory, 'isMandatory').to.eql(true);
-
+                                            expect(shouldUpdate.downloadUrl).to.match(/http:\/\/localhost:9001\/storagev2\/([a-f0-9]+?)$/);
 
                                             return am.getDeploymentHistory(name, 'Production')
                                                 .then(resp => {
